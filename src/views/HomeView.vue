@@ -1,6 +1,6 @@
 <template lang="">
   <div>
-    
+    Salom
   </div>
 </template>
 <script>
