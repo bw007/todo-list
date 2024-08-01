@@ -1,15 +1,3 @@
 <template>
-  <div>
-    salom
-  </div>
+  <RouterView class="font-montserrat" />
 </template>
-
-<script>
-export default {
-  
-}
-</script>
-
-<style lang="">
-  
-</style>
