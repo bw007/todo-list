@@ -1,5 +1,5 @@
 <template>
-  <aside class="bg-[#F2EAE1] w-64 flex-shrink-0">
+  <aside class="bg-gray-100 w-64 flex-shrink-0">
     <div class="p-4">
       <h1 class="border-l-4 border-l-[#F8D442] uppercase leading-none px-2 text-2xl font-bold">Crud</h1>
     </div>
