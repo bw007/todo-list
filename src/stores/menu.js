@@ -16,12 +16,11 @@ export const menu = [
     component: () => import("@/views/CourseView.vue"),
     icon: LibraryBig
   },
-  
   {
     path: "students",
     name: "Students",
     title: "Students",
-    component: () => import("@/views/CourseView.vue"),
+    component: () => import("@/views/StudentsView.vue"),
     icon: GraduationCap
   },
 ]
