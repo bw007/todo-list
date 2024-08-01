@@ -3,7 +3,7 @@
     <SidebarPart />
     <div class="flex-1 flex flex-col">
       <HeaderPart />
-      <MainPart />
+      <MainPart class="p-6" />
     </div>
   </div>
 </template>
