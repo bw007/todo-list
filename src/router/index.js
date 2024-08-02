@@ -12,6 +12,18 @@ const router = createRouter({
       children: [
         ...menu
       ]
+    },
+    {
+      path: '/auth',
+      name: 'Auth',
+      component: () => import("@/layouts/AuthLayout.vue"),
+      children: [
+        {
+          path: '/auth/signin',
+          name: 'SignIN',
+          component: () => import("@/views/auth/SignIn.vue"),
+        }
+      ]
     }
   ]
 })
