@@ -31,7 +31,7 @@
         -->
 
         <button type="button" @click="handleGoogleSignIn"
-          class="flex items-center gap-3 justify-center w-full text-gray-500 border hover:bg-amber-50 border-amber-400 focus:outline-none focus:ring-amber-500 font-medium rounded-[4px] text-sm p-3 text-center dark:bg-amber-500 dark:hover:bg-amber-400 dark:focus:ring-amber-400 uppercase">
+          class="flex items-center gap-3 justify-center w-full text-gray-500 border hover:bg-amber-50 border-amber-400 focus:outline-none focus:bg-amber-200 focus:ring-amber-500 font-medium rounded-[4px] text-sm p-3 text-center dark:bg-amber-500 dark:hover:bg-amber-400 dark:focus:ring-amber-400 uppercase">
           <img src="@/assets/google.svg" alt="">
           continue with google
         </button>
