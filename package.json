@@ -15,7 +15,9 @@
     "lucide-vue-next": "^0.417.0",
     "pinia": "^2.1.7",
     "primevue": "^4.0.4",
+    "tailwindcss-primeui": "^0.3.4",
     "vue": "^3.4.29",
+    "vue-cookies": "^1.8.4",
     "vue-router": "^4.3.3",
     "vue-the-mask": "^0.11.1"
   },

@@ -7,5 +7,5 @@ export default {
       'montserrat': 'Montserrat'
     }
   },
-  plugins: []
+  plugins: [require('tailwindcss-primeui')]
 }

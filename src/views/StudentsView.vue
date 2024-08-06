@@ -27,11 +27,6 @@
             <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Phone</label>
             <input id="phone" v-model="student.phone" v-mask="'+998 (##) ###-##-##'" placeholder="+998 (__) ___-__-__" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
-          <div class="mb-3">
-            <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Date of admission</label>
-            <DatePicker id="createdTime" v-model="student.createdTime" placeholder="Name" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            <DatePicker v-model="student.createdTime" />
-          </div>
         </form>
       </DialogPart>
     </div>
@@ -40,7 +35,6 @@
 </template>
 
 <script>
-import DatePicker from 'primevue/datepicker';
 import DialogPart from '@/components/ui/DialogPart.vue';
 import StudentList from '@/components/students/StudentList.vue';
 
@@ -48,16 +42,17 @@ export default {
   components: {
     StudentList,
     DialogPart,
-    DatePicker,
   },
   methods: {
     handleCancel() {
       console.log('Bekor qilindi');
       this.showDialog = false;
+      this.student = {}
     },
     handleConfirm() {
       console.log('Tasdiqlandi');
       this.showDialog = false;
+      this.student = {}
     }
   },
   data() {
@@ -73,3 +68,7 @@ export default {
   },
 }
 </script>
+
+<style>
+
+</style>
