@@ -8,27 +8,29 @@
       <DialogPart
         :isVisible="showDialog" 
         title="New student"
-        confirmButtonText="Yo'q"
+        confirmButtonText="Ha"
+        cancelButtonText="Yo'q"
         @close="showDialog = false"
         @cancel="handleCancel"
         @confirm="handleConfirm"
       >
-        <form @submit.prevent="handleSubmit">
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-            <input id="name" v-model="student.name" type="text" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <form @submit.prevent="handleSubmit" class="mt-4">
+          <div class="mb-3">
+            <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Name</label>
+            <input id="name" v-model="student.name" placeholder="Name" type="text" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           </div>
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input id="email" v-model="student.email" type="email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+          <div class="mb-3">
+            <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Email</label>
+            <input id="name" v-model="student.email" placeholder="Email" type="email" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           </div>
-          <div class="mb-4">
-            <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-            <input id="phone" v-model="student.phone" type="tel" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+          <div class="mb-3">
+            <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Phone</label>
+            <input id="phone" v-model="student.phone" v-mask="'+998 (##) ###-##-##'" placeholder="+998 (__) ___-__-__" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </div>
-          <div class="mb-4">
-            <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
-            <input id="date" v-model="student.date" type="date" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+          <div class="mb-3">
+            <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Date of admission</label>
+            <DatePicker id="createdTime" v-model="student.createdTime" placeholder="Name" required class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            <DatePicker v-model="student.createdTime" />
           </div>
         </form>
       </DialogPart>
@@ -38,13 +40,15 @@
 </template>
 
 <script>
-import DialogPart from '@/components/dashboard/DialogPart.vue';
+import DatePicker from 'primevue/datepicker';
+import DialogPart from '@/components/ui/DialogPart.vue';
 import StudentList from '@/components/students/StudentList.vue';
 
 export default {
   components: {
     StudentList,
-    DialogPart
+    DialogPart,
+    DatePicker,
   },
   methods: {
     handleCancel() {
@@ -63,7 +67,7 @@ export default {
         name: '',
         email: '',
         phone: '',
-        date: ''
+        createdTime: ''
       }
     }
   },
