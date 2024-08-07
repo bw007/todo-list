@@ -13,7 +13,7 @@
       {{ item.date }}
     </td>
     <td class="px-6 py-4 text-right flex items-center justify-end gap-6">
-      <button class="text-amber-400 hover:text-amber-500 active:text-amber-400">
+      <button class="text-amber-400 hover:text-amber-500 active:text-amber-400" @click="editHandle(item.id)">
         <Pencil :size="18" />
       </button>
       <button class="text-amber-400 hover:text-amber-500 active:text-amber-400">
@@ -36,6 +36,12 @@ export default {
       type: Object,
       required: true
     }
-  }
+  },
+  emits: ['edit'],
+  methods: {
+    editHandle(id) {
+      this.$emit('edit', id)
+    }
+  },
 }
 </script>
