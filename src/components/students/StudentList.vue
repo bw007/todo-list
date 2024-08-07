@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <StudentListItem v-for="item in list" :key="item.id" :item="item"/>
+      <StudentListItem v-for="item in data" :key="item.id" :item="item" @edit="handleEdit"/>
     </tbody>
   </table>
 </template>
@@ -29,45 +29,15 @@ export default {
   components: {
     StudentListItem
   },
-  data() {
-    return {
-      list: [
-        {
-          name: "John Doe",
-          email: "example@gmail.com",
-          phone: "7305477760",
-          date: "08-Dec, 2021",
-          id: 1
-        },
-        {
-          name: "John Doe",
-          email: "example@gmail.com",
-          phone: "7305477760",
-          date: "08-Dec, 2021",
-          id: 2
-        },
-        {
-          name: "John Doe",
-          email: "example@gmail.com",
-          phone: "7305477760",
-          date: "08-Dec, 2021",
-          id: 3
-        },
-        {
-          name: "John Doe",
-          email: "example@gmail.com",
-          phone: "7305477760",
-          date: "08-Dec, 2021",
-          id: 4
-        },
-        {
-          name: "John Doe",
-          email: "example@gmail.com",
-          phone: "7305477760",
-          date: "08-Dec, 2021",
-          id: 5
-        }
-      ]
+  props: {
+    data: {
+      type: Array
+    }
+  },
+  emits: ['edit'],
+  methods: {
+    handleEdit(id) {
+      this.$emit('edit', id)
     }
   },
 }
