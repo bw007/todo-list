@@ -8,10 +8,6 @@
         <X class="absolute top-4 right-4 opacity-50 hover:opacity-90 cursor-pointer" :size="18" @click="closeDialog" />
         <h3 class="text-lg font-medium">{{ title }}</h3>
         <slot></slot>
-        <div class="actions mt-4 flex items-center justify-end gap-3">
-          <button v-if="showCancelButton" class="border text-sm font-medium hover:text-amber-500 hover:bg-amber-50 rounded w-20 p-1" @click="cancel">{{ cancelButtonText }}</button>
-          <button v-if="showConfirmButton" class="border border-amber-500 bg-amber-500 hover:opacity-80 text-white text-sm font-medium rounded w-20 p-1" @click="confirm">{{ confirmButtonText }}</button>
-        </div>
       </div>
     </div>
   </Transition>
@@ -35,33 +31,11 @@ export default {
       type: String,
       default: 'Dialog'
     },
-    showCancelButton: {
-      type: Boolean,
-      default: true
-    },
-    showConfirmButton: {
-      type: Boolean,
-      default: true
-    },
-    cancelButtonText: {
-      type: String,
-      default: 'Cancel'
-    },
-    confirmButtonText: {
-      type: String,
-      default: 'Confirm'
-    }
   },
-  emits: ['close', 'cancel', 'confirm'],
+  emits: ['close'],
   methods: {
     closeDialog() {
       this.$emit('close');
-    },
-    cancel() {
-      this.$emit('cancel');
-    },
-    confirm() {
-      this.$emit('confirm');
     }
   }
 }
