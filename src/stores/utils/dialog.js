@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export const useDialogStore = defineStore('dialogStore', {
   state: () => ({
-    toggle: true,
+    toggle: false,
   }),
   actions: {
     setToggle(value) {
