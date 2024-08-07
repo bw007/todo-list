@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { menu } from '@/stores/menu';
+import { menu } from '@/stores/utils/menu';
 
 export default {
   components: {},
