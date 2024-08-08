@@ -28,10 +28,9 @@ export default {
   methods: {
     async handleGoogleSignIn() {
       try {
-        // Google bilan kirish funksiyasini chaqirish
         const user = await signInWithGoogle();
-        // Foydalanuvchi ma'lumotlarini ishlatish
         console.log('Kirgan foydalanuvchi:', user);
+        this.$router.push('/');
       } catch (error) {
         console.error('Google bilan kirishdagi xatolik:', error);
       }
