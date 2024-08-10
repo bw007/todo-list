@@ -87,6 +87,7 @@ export default {
         const docId = await createDocument('users', userData);
         console.log('Foydalanuvchi qo\'shildi: ', docId);
         this.clearForm();
+        this.closeHandle();
         this.isInvalid = false;
       } catch (error) {
         console.error('Foydalanuvchi qo\'shishda xatolik: ', error);
