@@ -12,7 +12,7 @@
       v-slot="{ errors }"
     >
       <div class="mb-3 relative">
-        <label for="name" class="block text-xs mb-[2px] font-medium text-gray-700">Name</label>
+        <label for="name" class="block test text-xs mb-[2px] font-medium text-gray-700">Name</label>
         <Field name="name" placeholder="Name" type="text" required v-model="student.name" :class="{ 'border-red-400': errors.name }" class="bg-transparent border outline-none border-gray-300 text-gray-900 text-sm rounded focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
         <span v-if="errors.name" class="text-red-500 text-xs absolute right-0">{{ errors.name }}</span>
       </div>
